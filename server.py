@@ -6,6 +6,7 @@ from db import OfficerDB
 from http import cookies
 from session_store import SessionStore
 from passlib.hash import bcrypt
+import sys
 
 gSessionStore = SessionStore()
 
@@ -284,6 +285,7 @@ def main():
    
     db = OfficerDB()
     db.createOfficersTable()
+    db.createUsersTable()
     db = None
 
     port = 8080
