@@ -203,7 +203,7 @@ class MyReqHandle(ReqHandle):
         db = OfficerDB()
         user = db.getUserEmail(email)
         print(user)
-        name = "{0}, {1}".format(user['lName'].upper(), user['fName'].upper())
+        # name = "{0}, {1}".format(user['lName'].upper(), user['fName'].upper())
 
         if user != None:
             if bcrypt.verify(userPass, user['pass']):
