@@ -25,7 +25,7 @@ class OfficerDB:
         self.connection.close()
 
     def createOfficersTable(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS officers (id SERIAL PRIMARY KEY, name VARCHAR(255), rank VARCHAR(255), station VARCHAR(255), ship VARCHAR(255), species VARCHAR(255)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS officers (id SERIAL PRIMARY KEY, name VARCHAR(255), rank VARCHAR(255), station VARCHAR(255), ship VARCHAR(255), species VARCHAR(255))")
         self.connection.commit()
     
     def createUsersTable(self):
