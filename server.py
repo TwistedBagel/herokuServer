@@ -221,8 +221,9 @@ class MyReqHandle(ReqHandle):
     def do_OPTIONS(self):
         self.load_session_data()
         self.send_response(200)
-        self.send_header('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, DELETE, PUT')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.send_header("Access-Control-Allow-Origin",  "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Accept, Content-Type, Origin")
         self.end_headers()
     
     def do_GET(self):
