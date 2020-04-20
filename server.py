@@ -281,10 +281,19 @@ class MyReqHandle(ReqHandle):
             self.handleNotFound()
 
 def main():
-    listen = ('127.0.0.1', 8080)
-    server = HttpServer(listen, MyReqHandle)
+   
+    db = OfficerDB()
+    db.createOfficersTable()
+    db = None
 
-    print('Listening...')
+    port = 8080
+    if len(sys.argv) > 1:
+        port = int(sys.argv[1])
+
+    listen = ("0.0.0.0", port)
+    server = HttpServer(listen, MyReqHandle)
+    print("listening on", "{}:{}".format(*listen))
     server.serve_forever()
+    
 
 main()
