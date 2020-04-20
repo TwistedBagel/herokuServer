@@ -13,7 +13,8 @@ class OfficerDB:
         self.connection = psycopg2.connect(
                 cursor_factory = psycopg2.extras.RealDictCursor,
                 database = url.path[1:],
-                user = url.password,
+                user = url.username,
+                password = url.password,
                 host = url.hostname,
                 port = url.port
         )
