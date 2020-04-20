@@ -29,7 +29,7 @@ class OfficerDB:
         self.connection.commit()
     
     def createUsersTable(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, fName VARCHAR(255), lName VARCHAR(255), email VARCHAR(255), pass VARCHAR(255)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, fName VARCHAR(255), lName VARCHAR(255), email VARCHAR(255), pass VARCHAR(255))")
         self.connection.commit()
 
     def getAllOfficers(self):
