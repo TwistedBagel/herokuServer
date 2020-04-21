@@ -15,6 +15,7 @@ class MyReqHandle(ReqHandle):
     def end_headers(self):
         self.send_cookie()
         # self.send_header("Access-Control-Allow-Origin", self.headers["Origin"])
+        self.send_header("Access-Control-Allow-Origin", '*') 
         self.send_header("Access-Control-Allow-Credentials", "true")
         ReqHandle.end_headers(self)
 
